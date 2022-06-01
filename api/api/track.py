@@ -3,9 +3,9 @@ import uuid
 
 from fastapi import APIRouter, Depends
 
-from api.auth import manager
-from api.models import Log
-from api.db import LogDB
+from auth import manager
+from models import Log
+from db import LogDB
 
 router = APIRouter()
 db = LogDB(os.getenv("DETA_KEY"), "befit-logs")

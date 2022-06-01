@@ -6,8 +6,8 @@ from fastapi.responses import JSONResponse
 from fastapi_login import LoginManager
 from dotenv import load_dotenv
 
-from api.db import AuthDB, UserExistsException
-from api.models import User
+from db import AuthDB, UserExistsException
+from models import User
 
 load_dotenv()
 

@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-import api.auth as auth
-import api.track as track
+import auth
+import track
 
 origins = ["http://localhost", "https://localhost", "*"]
 
