@@ -1,0 +1,5 @@
+fastapi[all]
+bcrypt
+fastapi-login
+deta
+python-dotenv
