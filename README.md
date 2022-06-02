@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BeFit
 
-## Getting Started
+BeFit is the fitness tracker that works! You name it we have it! Stats? You got it! Meditation? That too! 800+ Workouts? Definitely!
 
-First, run the development server:
 
+## Badges
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
+[![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=befit)](https://befit-tracker.vercel.app)
+
+## Screenshots
+
+![App Screenshot](https://i.imgur.com/DH6wQ6j.png)
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`DETA_KEY` - The Deta API key
+
+`SECRET` - The JWT secret
+
+
+## Lessons Learned
+
+Don't use technologies or tools you have never worked with to create a complete product.
+## Features
+
+- Light/dark mode
+- 800+ Exercises/Workouts
+- Meditation
+- BMI Calculator
+- Extensive Stats
+- Progress tracking/logging
+- Recommendations
+
+
+## FAQ
+
+#### Where is your progress stored?
+
+Your progress is safely stored in the cloud and only you can access it.
+
+#### Where do the workouts and other data come from?
+
+All of the workouts and other data come from either our own API or a 3rd party API or library.
+
+## Feedback
+
+If you have any feedback, please tweet to me at [@py_bash1](https://twitter.com/py_bash1) or DM me on Discord [@pybash#3122](https://dicord.com/users/626461325744275464)
+## Tech Stack
+
+**Client:** NextJS, TailwindCSS
+
+**Server:** Python(FastAPI)
+
+## API Reference
+
+The API Reference can be found [here](https://befit.up.railway.app/docs).
+## Contributing
+
+Contributions are always welcome!
+
+Clone and repo and run `npm run dev` or `yarn dev` to start the local webserver
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone https://github.com/pybash1/befit.git
+$ cd befit
+$ yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start the Python API
+```bash
+$ cd befit/server/api
+$ pip install -r requirements.txt
+$ python3 -m uvicorn api:api --reload
+```
+## License
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+[MIT](https://choosealicense.com/licenses/mit/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Authors
 
-## Learn More
+- [@pybash](https://www.github.com/pybash1)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
