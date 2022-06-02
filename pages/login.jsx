@@ -15,7 +15,7 @@ const Login = () => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : "https://befit.up.railway.app";;
+          : "https://befit.up.railway.app/checkjwt";
       fetch(API_URL, {
         method: "GET",
         headers: {
@@ -40,7 +40,7 @@ const Login = () => {
     let API_URL =
       process.env.NODE_ENV === "development"
         ? "http://localhost:8000/login"
-        : "https://befit.up.railway.app";;
+        : "https://befit.up.railway.app/login";
     fetch(API_URL, {
       method: "POST",
       body: JSON.stringify({

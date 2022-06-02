@@ -116,7 +116,7 @@ const Progress = () => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : "https://befit.up.railway.app";
+          : "https://befit.up.railway.app/checkjwt";
       fetch(API_URL, {
         method: "GET",
         headers: {
@@ -136,12 +136,12 @@ const Progress = () => {
   let API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8000/logs"
-      : "https://befit.up.railway.app";
+      : "https://befit.up.railway.app/logs";
 
   let API_URL2 =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8000/create/log"
-      : "https://befit.up.railway.app";
+      : "https://befit.up.railway.app/craete/log";
 
   const [workoutName, setWorkoutName] = useState("");
   const [workoutType, setWorkoutType] = useState("Workout");

@@ -30,7 +30,7 @@ const Dashboard = () => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : "https://befit.up.railway.app";
+          : "https://befit.up.railway.app/checkjwt";
       fetch(API_URL, {
         method: "GET",
         headers: {
@@ -110,7 +110,7 @@ const Dashboard = () => {
   let API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8000/create/log"
-      : "https://befit.up.railway.app";
+      : "https://befit.up.railway.app/create/log";
 
   const addExercise = () => {
     if (workoutName === "") {

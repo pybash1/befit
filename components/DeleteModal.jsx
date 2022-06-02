@@ -15,7 +15,7 @@ function DeleteModal(props) {
     }, [logName])
 
     const deleteLog = () => {
-        const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:8000/delete/log/"+props.lid : "https://befit.up.railway.app";
+        const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:8000/delete/log/"+props.lid : "https://befit.up.railway.app/delete/log/"+props.lid;
         fetch(API_URL, {
             method: "DELETE",
             headers: {

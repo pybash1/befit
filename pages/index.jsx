@@ -17,7 +17,7 @@ const Home = () => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : "https://befit.up.railway.app";;
+          : "https://befit.up.railway.app/checkjwt";
       console.log(cookieCutter.get("access-token"));
       fetch(API_URL, {
         method: "GET",

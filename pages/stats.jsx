@@ -104,7 +104,7 @@ const Stats = () => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : "https://befit.up.railway.app";
+          : "https://befit.up.railway.app/checkjwt";
       fetch(API_URL, {
         method: "GET",
         headers: {
@@ -150,7 +150,7 @@ const Stats = () => {
   let API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8000/logs"
-      : "https://befit.up.railway.app";
+      : "https://befit.up.railway.app/logs";
 
   useEffect(() => {
     fetch(API_URL, {

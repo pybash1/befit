@@ -19,7 +19,7 @@ const Log = () => {
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8000/log/"
-      : "https://befit.up.railway.app";
+      : "https://befit.up.railway.app/log/";
 
   useEffect(() => {
     let lid =
