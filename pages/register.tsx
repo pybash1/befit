@@ -16,7 +16,7 @@ const Register: NextPage = () => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : undefined;
+          : "https://befit.up.railway.app";;
       console.log(cookieCutter.get("access-token"));
       fetch(API_URL as string, {
         method: "GET",
@@ -42,7 +42,7 @@ const Register: NextPage = () => {
     let API_URL =
       process.env.NODE_ENV === "development"
         ? "http://localhost:8000/register"
-        : undefined;
+        : "https://befit.up.railway.app";;
     fetch(API_URL as string, {
       method: "POST",
       body: JSON.stringify({

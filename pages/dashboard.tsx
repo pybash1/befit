@@ -31,7 +31,7 @@ const Dashboard: NextPage = () => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : null;
+          : "https://befit.up.railway.app";
       fetch(API_URL as string, {
         method: "GET",
         headers: {
@@ -111,7 +111,7 @@ const Dashboard: NextPage = () => {
   let API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8000/create/log"
-      : null;
+      : "https://befit.up.railway.app";
 
   const addExercise = () => {
     if (workoutName === "") {

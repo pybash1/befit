@@ -16,7 +16,7 @@ function EditModal(props: any) {
     }, [logName, logType]);
 
     const editLog = () => {
-        const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:8000/update/log/"+props.lid : null;
+        const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:8000/update/log/"+props.lid : "https://befit.up.railway.app";
         let logType_ = logType === "Hike" || logType === "Run" || logType === "Walk" ? "Hike/Run/Walk" : logType;
         fetch(API_URL as string, {
             method: "PUT",

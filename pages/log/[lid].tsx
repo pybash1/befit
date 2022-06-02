@@ -20,7 +20,7 @@ const Log: NextPage = () => {
   const API_URL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:8000/log/"
-      : null;
+      : "https://befit.up.railway.app";
 
   useEffect(() => {
     let lid =

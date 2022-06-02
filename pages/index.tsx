@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : undefined;
+          : "https://befit.up.railway.app";;
       console.log(cookieCutter.get("access-token"));
       fetch(API_URL as string, {
         method: "GET",

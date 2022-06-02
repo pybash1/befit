@@ -46,7 +46,7 @@ const Search: NextPage<{ query: string }> = ({ query }) => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : null;
+          : "https://befit.up.railway.app";
       fetch(API_URL as string, {
         method: "GET",
         headers: {

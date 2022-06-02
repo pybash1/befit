@@ -16,7 +16,7 @@ const Login: NextPage = () => {
       let API_URL =
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
-          : undefined;
+          : "https://befit.up.railway.app";;
       fetch(API_URL as string, {
         method: "GET",
         headers: {
@@ -41,7 +41,7 @@ const Login: NextPage = () => {
     let API_URL =
       process.env.NODE_ENV === "development"
         ? "http://localhost:8000/login"
-        : undefined;
+        : "https://befit.up.railway.app";;
     fetch(API_URL as string, {
       method: "POST",
       body: JSON.stringify({
