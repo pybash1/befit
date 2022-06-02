@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect } from "react";
@@ -8,7 +7,7 @@ import Navbar from "../components/Navbar";
 import FAQ from "../components/FAQ";
 import Link from "next/link";
 
-const Home: NextPage = () => {
+const Home = () => {
   useEffect(() => {
     if (
       cookieCutter.get("access-token") !== null ||
@@ -20,7 +19,7 @@ const Home: NextPage = () => {
           ? "http://localhost:8000/checkjwt"
           : "https://befit.up.railway.app";;
       console.log(cookieCutter.get("access-token"));
-      fetch(API_URL as string, {
+      fetch(API_URL, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

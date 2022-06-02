@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Pie, Line } from "react-chartjs-2";
@@ -93,7 +92,7 @@ export const loptions = {
   },
 };
 
-const Stats: NextPage = () => {
+const Stats = () => {
   useEffect(() => {
     if (
       cookieCutter.get("access-token") === undefined ||
@@ -106,7 +105,7 @@ const Stats: NextPage = () => {
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
           : "https://befit.up.railway.app";
-      fetch(API_URL as string, {
+      fetch(API_URL, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -154,7 +153,7 @@ const Stats: NextPage = () => {
       : "https://befit.up.railway.app";
 
   useEffect(() => {
-    fetch(API_URL as string, {
+    fetch(API_URL, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -174,7 +173,7 @@ const Stats: NextPage = () => {
   let day5 = getAll(data, dayb5);
   let day6 = getAll(data, dayb6);
 
-  let fitnessScore: number = (today.length + yesterday.length + day2.length + day3.length + day4.length + day5.length + day6.length) / 7;
+  let fitnessScore = (today.length + yesterday.length + day2.length + day3.length + day4.length + day5.length + day6.length) / 7;
   fitnessScore = fitnessScore.toFixed(2);
 
   if (loading) {

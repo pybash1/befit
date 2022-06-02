@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import cookieCutter from 'cookie-cutter';
 import toast, { Toaster } from "react-hot-toast";
 
-function DeleteModal(props: any) {
+function DeleteModal(props) {
     const [logName, setLogName] = useState("");
     const [disabled, setDisabled] = useState(true);
 
@@ -16,7 +16,7 @@ function DeleteModal(props: any) {
 
     const deleteLog = () => {
         const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:8000/delete/log/"+props.lid : "https://befit.up.railway.app";
-        fetch(API_URL as string, {
+        fetch(API_URL, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

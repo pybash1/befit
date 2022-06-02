@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import cookieCutter from "cookie-cutter";
@@ -6,7 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 import Navbar from "../components/Navbar";
 
-const Login: NextPage = () => {
+const Register = () => {
   useEffect(() => {
     if (
       cookieCutter.get("access-token") !== null ||
@@ -17,7 +16,8 @@ const Login: NextPage = () => {
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
           : "https://befit.up.railway.app";;
-      fetch(API_URL as string, {
+      console.log(cookieCutter.get("access-token"));
+      fetch(API_URL, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -36,13 +36,13 @@ const Login: NextPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e: Event) => {
+  const handleRegiser = (e) => {
     e.preventDefault();
     let API_URL =
       process.env.NODE_ENV === "development"
-        ? "http://localhost:8000/login"
+        ? "http://localhost:8000/register"
         : "https://befit.up.railway.app";;
-    fetch(API_URL as string, {
+    fetch(API_URL, {
       method: "POST",
       body: JSON.stringify({
         email: email,
@@ -71,7 +71,7 @@ const Login: NextPage = () => {
   return (
     <div className="bg-white dark:bg-gray-800">
       <Head>
-        <title>BeFit - Login</title>
+        <title>BeFit - Register</title>
       </Head>
       <Toaster
         toastOptions={{ style: { background: "#111827", color: "#fff" } }}
@@ -102,16 +102,17 @@ const Login: NextPage = () => {
           <div className="flex-1">
             <div className="text-center">
               <h2 className="text-4xl font-bold text-center text-gray-700 dark:text-white">
-                Login
+                Register
               </h2>
 
               <p className="mt-3 text-gray-500 dark:text-gray-300">
-                Login to your account to start tracking your workouts!
+                Create a new account to start tracking your wrokouts and measure
+                your performance!
               </p>
             </div>
 
             <div className="mt-8">
-              <form onSubmit={handleLogin}>
+              <form onSubmit={handleRegiser}>
                 <div>
                   <label
                     htmlFor="email"
@@ -127,7 +128,6 @@ const Login: NextPage = () => {
                     type="email"
                     name="email"
                     id="email"
-                    required
                     placeholder="example@example.com"
                     className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
@@ -157,22 +157,19 @@ const Login: NextPage = () => {
                 </div>
 
                 <div className="mt-6">
-                  <button
-                    className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                    type="submit"
-                  >
-                    Login
+                  <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                    Sign Up
                   </button>
                 </div>
               </form>
 
               <p className="mt-6 text-sm text-center text-gray-400">
-                Don&#x27;t have an account yet?{" "}
+                Already have an account?{" "}
                 <a
                   href="#"
                   className="text-blue-500 focus:outline-none focus:underline hover:underline"
                 >
-                  Sign up
+                  Login
                 </a>
                 .
               </p>
@@ -184,4 +181,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default Register;

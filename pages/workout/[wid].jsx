@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
@@ -21,8 +20,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }: { params: { wid: string } }) {
-  const wid = parseInt(params?.wid as string);
+export async function getStaticProps({ params }) {
+  const wid = parseInt(params?.wid);
   const workout = workouts.exercises[wid];
   return {
     props: {
@@ -32,7 +31,7 @@ export async function getStaticProps({ params }: { params: { wid: string } }) {
   };
 }
 
-const Workout: NextPage<{ workout: WorkoutData; wid: string }> = ({
+const Workout = ({
   workout,
   wid,
 }) => {
@@ -48,7 +47,7 @@ const Workout: NextPage<{ workout: WorkoutData; wid: string }> = ({
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
           : "https://befit.up.railway.app";
-      fetch(API_URL as string, {
+      fetch(API_URL, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -143,7 +142,7 @@ const Workout: NextPage<{ workout: WorkoutData; wid: string }> = ({
             <div className="relative">
               {workout.secondaryMuscles.length !== 0 ? (
                 workout.secondaryMuscles.map(
-                  (muscle: string, index: number) => {
+                  (muscle, index) => {
                     if (index !== workout.secondaryMuscles.length - 1) {
                       return (
                         <a
@@ -190,18 +189,5 @@ const Workout: NextPage<{ workout: WorkoutData; wid: string }> = ({
     </div>
   );
 };
-
-interface WorkoutData {
-  name: string;
-  video: string;
-  force: string;
-  level: string;
-  mechanic: string;
-  equipment: string;
-  primaryMuscles: string[];
-  secondaryMuscles: [];
-  instructions: string[];
-  category: string;
-}
 
 export default Workout;

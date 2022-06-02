@@ -3,16 +3,16 @@ import cookieCutter from 'cookie-cutter';
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-function Navbar(props: any) {
+function Navbar(props) {
     const router = useRouter();
     const [query, setQuery] = useState("");
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         router.push(`/search/${query}`);
     }
 
-    const logout = (e: any) => {
+    const logout = (e) => {
         cookieCutter.set("access-token", undefined);
         router.push("/login")
     }

@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -7,7 +6,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { Bar } from "react-chartjs-2";
 
 import Navbar from "../components/Navbar";
-import Loading from "../components/Loading";
 import getItems from "../lib/sortData";
 
 import {
@@ -32,7 +30,7 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'top' as const,
+      position: 'top',
       labels: {
         color: "rgb(255, 255, 255)",
       }
@@ -71,7 +69,7 @@ export const loptions = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'top' as const,
+      position: 'top',
       labels: {
         color: "rgb(0, 0, 0)",
       }
@@ -106,7 +104,7 @@ export const loptions = {
   },
 }};
 
-const Progress: NextPage = () => {
+const Progress = () => {
   useEffect(() => {
     if (
       cookieCutter.get("access-token") === undefined ||
@@ -119,7 +117,7 @@ const Progress: NextPage = () => {
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
           : "https://befit.up.railway.app";
-      fetch(API_URL as string, {
+      fetch(API_URL, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -154,7 +152,7 @@ const Progress: NextPage = () => {
     } else {
       let newDate = new Date();
       if (workoutType === "Hike" || workoutType === "Run" || workoutType === "Walk") {
-        fetch(API_URL2 as string, {
+        fetch(API_URL2, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -164,7 +162,7 @@ const Progress: NextPage = () => {
         })
         toast.success("Added workout successfully!")
       } else {
-        fetch(API_URL2 as string, {
+        fetch(API_URL2, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -181,7 +179,7 @@ const Progress: NextPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(API_URL as string, {
+    fetch(API_URL, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -533,7 +531,7 @@ const Progress: NextPage = () => {
               </tr>
             </thead>
             <tbody>
-              {workouts.map((workout, index: number) => {
+              {workouts.map((workout) => {
                 return (
                   <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th

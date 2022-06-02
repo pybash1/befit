@@ -1,14 +1,13 @@
-import { NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 import Navbar from "../components/Navbar";
 
-const Meditation: NextPage = () => {
+const Meditation = () => {
   const [mood, setMood] = useState(-1);
 
-  const music: string[] = [
+  const music = [
     "/music1.mp3",
     "/music2.mp3",
     "/music3.mp3",

@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import cookieCutter from "cookie-cutter";
@@ -9,7 +8,7 @@ import Navbar from "../../components/Navbar";
 import EditModal from "../../components/EditModal";
 import DeleteModal from "../../components/DeleteModal";
 
-const Log: NextPage = () => {
+const Log = () => {
   const [loading, setLoading] = useState(true);
   const [log, setLog] = useState(null);
   const [openEditModal, setOpenEditModal] = useState(false);
@@ -27,7 +26,7 @@ const Log: NextPage = () => {
       window.location.href.split("/")[
         window.location.href.split("/").length - 1
       ];
-    fetch((API_URL + lid) as string, {
+    fetch((API_URL + lid), {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

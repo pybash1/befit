@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -23,8 +22,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({
   params,
-}: {
-  params: { query: string };
 }) {
   const query = params?.query;
   return {
@@ -34,7 +31,7 @@ export async function getStaticProps({
   };
 }
 
-const Search: NextPage<{ query: string }> = ({ query }) => {
+const Search = ({ query }) => {
   useEffect(() => {
     if (
       cookieCutter.get("access-token") === undefined ||
@@ -47,7 +44,7 @@ const Search: NextPage<{ query: string }> = ({ query }) => {
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
           : "https://befit.up.railway.app";
-      fetch(API_URL as string, {
+      fetch(API_URL, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

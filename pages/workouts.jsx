@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -8,7 +7,7 @@ import Navbar from "../components/Navbar";
 
 import workouts from "../data/workouts.json";
 
-const Workouts: NextPage = () => {
+const Workouts = () => {
   useEffect(() => {
     if (
       cookieCutter.get("access-token") === undefined ||
@@ -21,7 +20,7 @@ const Workouts: NextPage = () => {
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
           : "https://befit.up.railway.app";
-      fetch(API_URL as string, {
+      fetch(API_URL, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +68,7 @@ const Workouts: NextPage = () => {
               </tr>
             </thead>
             <tbody>
-              {workouts.exercises.map((workout: any) => {
+              {workouts.exercises.map((workout ) => {
                 return (
                   <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th

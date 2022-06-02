@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import cookieCutter from 'cookie-cutter';
 import toast, { Toaster } from "react-hot-toast";
 
-function EditModal(props: any) {
+function EditModal(props) {
     const [logName, setLogName] = useState("");
     const [logType, setLogType] = useState("Workout");
     const [disabled, setDisabled] = useState(true);
@@ -18,7 +18,7 @@ function EditModal(props: any) {
     const editLog = () => {
         const API_URL = process.env.NODE_ENV === "development" ? "http://localhost:8000/update/log/"+props.lid : "https://befit.up.railway.app";
         let logType_ = logType === "Hike" || logType === "Run" || logType === "Walk" ? "Hike/Run/Walk" : logType;
-        fetch(API_URL as string, {
+        fetch(API_URL, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

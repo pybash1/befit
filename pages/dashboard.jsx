@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Head from "next/head";
@@ -9,7 +8,7 @@ import Navbar from "../components/Navbar";
 
 import workouts from "../data/workouts.json";
 
-const Dashboard: NextPage = () => {
+const Dashboard = () => {
   const [workout, setWorkout] = useState({});
   const [desc, setDesc] = useState("");
   const [wid, setWid] = useState(-1);
@@ -32,7 +31,7 @@ const Dashboard: NextPage = () => {
         process.env.NODE_ENV === "development"
           ? "http://localhost:8000/checkjwt"
           : "https://befit.up.railway.app";
-      fetch(API_URL as string, {
+      fetch(API_URL, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -118,7 +117,7 @@ const Dashboard: NextPage = () => {
       toast.error("Workout name cannot be empty!")
     } else {
       let newDate = new Date();
-      fetch(API_URL as string, {
+      fetch(API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -166,7 +165,7 @@ const Dashboard: NextPage = () => {
                   &nbsp;&nbsp;
                   {workout.secondaryMuscles
                     ?.slice(0, 3)
-                    .map((muscle: string | null | undefined) => {
+                    .map((muscle) => {
                       return (
                         <>
                           <span className="px-3 py-1 text-xs text-blue-800 uppercase bg-blue-200 rounded-full dark:bg-blue-300 dark:text-blue-900">
