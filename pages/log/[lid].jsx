@@ -45,7 +45,61 @@ const Log = () => {
   }, []);
 
   if (loading) {
-    return <p>loading</p>;
+    return (
+      <div className="h-screen dark:bg-gray-800 dark:text-white">
+      <Head>
+        <title>BeFit - Log - Loading</title>
+      </Head>
+      <Navbar loggedin />
+      <div className="lg:full w-full lg:pl-10 lg:pr-10 lg:py-6 mt-6 lg:mt-0">
+        <h1 className="dark:text-white text-3xl title-font font-medium mb-1">
+          <div className="animate-pulse w-36 bg-gray-300 dark:bg-gray-500 h-6 rounded-md"></div>
+        </h1>
+        <div className="flex mb-4">
+          <span className="flex items-center">
+            <span className="dark:text-white">Share on </span>
+          </span>
+          <span className="flex pl-1 py-2  text-gray-500 space-x-2">
+              <svg
+                fill="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                className="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
+                  <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
+                </svg>
+              </button>
+          </span>
+        </div>
+        <div className="grid grid-cols-2 gap-10 text-center">
+            <button className="cursor-not-allowed modal-dark text-white bg-blue-500 border-0 py-2 focus:outline-none hover:bg-blue-600 rounded">
+              Edit Log
+            </button>
+            <button className="cursor-not-allowed modal-light text-white bg-blue-500 border-0 py-2 focus:outline-none hover:bg-blue-600 rounded">
+              Edit Log
+            </button>
+            <button className=" cursor-not-allowed modal-dark text-white bg-blue-500 border-0 py-2 focus:outline-none hover:bg-blue-600 rounded">
+              Delete Log
+            </button>
+            <button className="cursor-not-allowed modal-light text-white bg-blue-500 border-0 py-2 focus:outline-none hover:bg-blue-600 rounded">
+              Delete Log
+            </button>
+        </div>
+      </div>
+    </div>
+    );
   }
 
   const twitterLink = `https://twitter.com/intent/tweet?text=Check out this workout I just performed on BeFit!%0AWorkout Name: ${log.log.name}`;

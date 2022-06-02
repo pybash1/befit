@@ -177,7 +177,85 @@ const Stats = () => {
   fitnessScore = fitnessScore.toFixed(2);
 
   if (loading) {
-    return <p>loading</p>
+    return (
+      <div className="h-screen dark:bg-gray-800">
+      <Navbar loggedin />
+      <Head>
+        <title>BeFit - Statistics</title>
+      </Head>
+      <div className="flex flex-col items-center dark:text-white">
+        <div className="pt-10">
+          <div className="flex items-center p-4 bg-gray-300 dark:bg-gray-900 rounded">
+            <div className="flex flex-shrink-0 items-center justify-center bg-green-200 h-16 w-16 rounded">
+              <svg
+                className="w-6 h-6 fill-current text-green-700"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <div className="flex-grow flex flex-col ml-4">
+              <span className="text-xl font-bold"><div className="animate-pulse w-36 bg-gray-300 dark:bg-gray-500 h-6 rounded-md"></div></span>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500">Your Fitness Score</span>
+                <span className="text-green-500 text-sm font-semibold ml-2">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-10 px-24 pt-10">
+        <div className="w-full rounded-lg p-8 bg-gray-300 dark:bg-gray-600">
+          <h1 className="dark:text-white text-3xl font-semibold">Workouts</h1>
+          <br />
+          <div className="flex flex-col items-center">
+            <div className="animate-pulse w-96 bg-gray-300 dark:bg-gray-500 h-96 rounded-full"></div>
+          </div>
+        </div>
+        <div className="w-full rounded-lg p-8 bg-gray-300 dark:bg-gray-600">
+          <h1 className="dark:text-white text-3xl font-semibold">
+            Consistency
+          </h1>
+          <div>
+            <div className="flex items-end">
+              <div className="animate-pulse w-2 bg-gray-500 dark:bg-gray-400 h-56 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-36 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-48 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-24 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-56 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-32 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-56 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-24 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-36 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-48 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-20 rounded-md"></div>
+              &nbsp;&nbsp;&nbsp;
+              <div className="animate-pulse w-10 bg-gray-500 dark:bg-gray-400 h-56 rounded-md"></div>
+            </div>
+            <br />
+            <div className="animate-pulse w-auto bg-gray-500 dark:bg-gray-400 h-2 rounded-md"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    )
   }
 
   return (
