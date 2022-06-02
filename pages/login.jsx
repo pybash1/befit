@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import cookieCutter from "cookie-cutter";
 import toast, { Toaster } from "react-hot-toast";
