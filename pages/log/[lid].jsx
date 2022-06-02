@@ -129,7 +129,7 @@ const Log = () => {
             <span className="dark:text-white">Share on </span>
           </span>
           <span className="flex pl-1 py-2  text-gray-500 space-x-2">
-            <a href={twitterLink} target="_blank">
+            <a href={twitterLink} target="_blank" rel="noreferrer">
               <svg
                 fill="currentColor"
                 strokeLinecap="round"

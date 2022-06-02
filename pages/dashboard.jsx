@@ -146,7 +146,7 @@ const Dashboard = () => {
       <div className="grid grid-cols-2 gap-10 px-20 py-8">
         <div className="bg-gray-300 dark:bg-gray-600 rounded-lg w-full p-10">
           <h1 className="text-2xl dark:text-white font-semibold">
-            Today's Recommended Workout
+            Today&apos;s Recommended Workout
           </h1>
           <br />
           <div className="dark:text-white">
@@ -207,7 +207,7 @@ const Dashboard = () => {
         <div className="bg-gray-300 dark:bg-gray-600 rounded-lg w-full p-10">
           <div>
             <h1 className="text-2xl dark:text-white font-semibold">
-              Today's Quote
+              Today&apos;s Quote
             </h1>
           </div>
           <br />
